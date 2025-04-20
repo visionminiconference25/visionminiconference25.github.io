@@ -1,15 +1,16 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vision Conference - UIUC</title>
+    <title>Vision Mini Conference 2025</title>
     <style>
         :root {
-            --primary-color: #13294B; /* UIUC Navy */
-            --secondary-color: #E84A27; /* UIUC Orange */
-            --accent-color: #1D58A7; /* UIUC Blue */
+            --primary-color: #13294B; /* Navy */
+            --secondary-color: #E84A27; /* Orange */
+            --accent-color: #1D58A7; /* Blue */
             --light-bg: #f8f9fa;
             --text-color: #333;
         }
@@ -49,52 +50,10 @@
             background-color: white;
             color: var(--primary-color);
             text-align: center;
-            padding: 1rem;
+            padding: 3rem 1rem;
             margin-bottom: 2rem;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             animation: fadeIn 1s ease-out;
-        }
-        
-        .university-header {
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-            border-top: 3px solid var(--secondary-color);
-            padding: 10px 20px;
-            background-color: white;
-        }
-        
-        .university-logo {
-            width: 70px;
-            height: auto;
-            margin-right: 15px;
-        }
-        
-        .university-name {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: var(--primary-color);
-            margin: 0;
-        }
-        
-        .college-school {
-            text-align: left;
-            padding: 0 20px;
-            margin-top: 10px;
-        }
-        
-        .college-name {
-            font-size: 1.2rem;
-            color: var(--primary-color);
-            margin: 0;
-            margin-bottom: 5px;
-        }
-        
-        .school-name {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: var(--primary-color);
-            margin: 0;
         }
         
         .title-container {
@@ -102,6 +61,7 @@
             padding: 1rem 0;
             position: relative;
             margin-top: 20px;
+            z-index: 1;
         }
         
         .title-container::after {
@@ -114,11 +74,35 @@
             background-color: var(--secondary-color);
         }
         
+        .title-container::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 90%;
+            height: 90%;
+            background-image: url('images/conference-logo.png'); /* Replace with your logo path */
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            opacity: 0.1; /* Adjust the transparency level as needed */
+            transform: translate(-50%, -50%);
+            z-index: 0;
+        }
+        
+        .conference-title {
+            position: relative;
+            z-index: 2;
+            margin: 0;
+            font-size: 3.5rem;
+            color: var(--primary-color);
+            animation: pulse 2s infinite;
+        }
+        
         h1 {
             margin: 0;
             font-size: 3rem;
             color: var(--primary-color);
-            animation: pulse 2s infinite;
         }
         
         h2 {
@@ -254,6 +238,39 @@
         
         .photo-placeholder img {
             transition: transform 0.5s ease;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .alumni-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            height: 100%;
+        }
+        
+        .alumni-link:hover {
+            text-decoration: none;
+        }
+        
+        .photo-card:hover .photo-info h4 {
+            color: var(--secondary-color);
+        }
+        
+        /* Styling for image placeholders until real photos are added */
+        .image-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #e9ecef;
+            color: #495057;
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-align: center;
+            padding: 10px;
         }
         
         .photo-info {
@@ -290,39 +307,18 @@
                 grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
             }
             
-            h1 {
+            h1, .conference-title {
                 font-size: 2rem;
-            }
-            
-            .university-name {
-                font-size: 1.2rem;
-            }
-            
-            .college-name {
-                font-size: 1rem;
-            }
-            
-            .school-name {
-                font-size: 1.4rem;
             }
         }
     </style>
 </head>
 <body>
-    <div class="university-header">
-        <img src="/api/placeholder/70/70" alt="UIUC Logo" class="university-logo">
-        <p class="university-name">UNIVERSITY OF ILLINOIS URBANA-CHAMPAIGN</p>
-    </div>
-    
-    <div class="college-school">
-        <p class="college-name">The Grainger College of Engineering</p>
-        <p class="school-name">Siebel School of Computing and Data Science</p>
-    </div>
-    
+    <!-- Conference Header with Transparent Background Logo -->
     <header>
         <div class="container">
             <div class="title-container">
-                <h1>Vision Mini Conference 2025 </h1>
+                <h1 class="conference-title">Vision Mini Conference 2025</h1>
                 <p>Showcasing Cutting-Edge Research and Innovation</p>
             </div>
         </div>
